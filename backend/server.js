@@ -14,7 +14,11 @@ const port = 4000
 
 // middlewares
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+  origin:["grab-it1.vercel.app"],
+  methods:["POST","GET"],
+  credentials:true
+}));
 
 // db connection
 connectDB()
